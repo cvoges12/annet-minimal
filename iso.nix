@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ...}:
 
 { 
   imports = [
@@ -9,4 +9,11 @@
   environment.systemPackages = with pkgs; [
     git
   ];
+  
+  networking = {
+    firewall.enable = false;
+    nameservers = [
+      "1.1.1.1"
+    ];
+  };
 }
